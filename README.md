@@ -8,4 +8,4 @@ The issue is a crash on launch, when using a SwiftData model which contains a Se
 
 ## Setup
 
-To get started, remember to set your `Team` under the `SwiftDataSetDemo` target > `Signing & Capabilities` section.
+To get started, you might need to set your `Team` under the `SwiftDataSetDemo` target > `Signing & Capabilities` section.
