@@ -2,17 +2,17 @@ import Foundation
 import SwiftData
 
 @Model
-final class Bird {
+class Bird {
     var id: UUID
     var species: String
     @Relationship(deleteRule: .cascade) var eggs = Set<Egg>() // CASE 1: Fails
 //  @Relationship(deleteRule: .cascade) var eggs = [Egg]()    // CASE 2: Works
-    
+
     init(id: UUID = UUID(), species: String? = nil) {
         self.id = id
         self.species = species ?? Self.randomBird
     }
-    
+
     private enum CodingKeys: String, CodingKey {
         case id
         case species

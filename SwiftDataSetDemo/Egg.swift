@@ -8,13 +8,13 @@ class Egg: Codable, Hashable {
     var id: UUID
     var name: String
     var ageWeeks: UInt
-    
+
     init(id: UUID = UUID(), name: String? = nil, ageWeeks: UInt = 0) {
         self.id = id
         self.name = name ?? Self.randomBirdName
         self.ageWeeks = ageWeeks
     }
-    
+
     // MARK: - Start Codable conformance (required for Egg to be a member of a Set)
     private enum CodingKeys: String, CodingKey {
         case id
@@ -36,17 +36,17 @@ class Egg: Codable, Hashable {
         try container.encode(ageWeeks, forKey: .ageWeeks)
     }
     // MARK: - End Codable conformance
-    
+
     // MARK: - Start Hashable conformance (makes sure that each Egg is distinct based only on its `id`)
     static func == (lhs: Egg, rhs: Egg) -> Bool {
         return lhs.id == rhs.id
     }
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
     // MARK: - End Hashable conformance
-    
+
     static var randomBirdName: String {
         [
             "Fluffy",
