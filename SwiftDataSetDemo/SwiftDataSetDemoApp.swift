@@ -1,10 +1,3 @@
-//
-//  SwiftDataSetDemoApp.swift
-//  SwiftDataSetDemo
-//
-//  Created by Brandon Fraune on 4/2/24.
-//
-
 import SwiftUI
 import SwiftData
 
